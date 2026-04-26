@@ -96,10 +96,6 @@
   --ring: 178 34 34; /* #B22222 */
 }
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
   background-color: hsl(var(--background));
@@ -109,4 +105,12 @@ body {
 
 #root {
   min-height: 100vh;
+}
+
+@layer components {
+  /* Custom component styles can be added here */
+}
+
+@layer utilities {
+  /* Custom utility classes can be added here */
 }
