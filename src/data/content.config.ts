@@ -19,7 +19,7 @@ export const landingPageContent: LandingPageContent = {
     ],
     media: {
       type: "video",
-      src: "/videos/hero-showcase.mp4",
+      src: "/videos/video.mp4",
       thumbnail: "/images/hero/thumbnail.jpg"
     },
     backgroundImage: "/images/hero/background.jpg"
@@ -154,7 +154,7 @@ export const landingPageContent: LandingPageContent = {
   },
   
   footer: {
-    logo: "/images/logo.svg",
+    logo: "/images/logo.png",
     tagline: "Your trusted local marketplace",
     sections: [
       {

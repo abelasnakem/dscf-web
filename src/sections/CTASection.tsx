@@ -41,12 +41,12 @@ export const CTASection: React.FC<CTASectionProps> = ({
 
       <Container size="lg" className="relative z-10">
         <AnimatedSection animation="fade">
-          <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+          <div className="text-center max-w-4xl mx-auto px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight">
               {headline}
             </h2>
             
-            <p className="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 md:mb-8 leading-relaxed max-w-3xl mx-auto">
               {description}
             </p>
 
@@ -57,7 +57,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
                 size="lg"
                 asChild
                 className={cn(
-                  'text-lg px-8 py-4 font-semibold',
+                  'text-base md:text-lg px-6 md:px-8 py-3 md:py-4 font-semibold w-full sm:w-auto',
                   // Override colors for better contrast on dark background
                   cta.variant === 'primary' && 'bg-white text-primary hover:bg-white/90',
                   cta.variant === 'outline' && 'border-white text-white hover:bg-white hover:text-primary'
@@ -76,9 +76,9 @@ export const CTASection: React.FC<CTASectionProps> = ({
       </Container>
 
       {/* Decorative Elements */}
-      <div className="absolute top-1/4 left-10 w-20 h-20 bg-white/10 rounded-full blur-xl" />
-      <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-white/10 rounded-full blur-xl" />
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-4 md:left-10 w-16 h-16 md:w-20 md:h-20 bg-white/10 rounded-full blur-xl" />
+      <div className="absolute bottom-1/4 right-4 md:right-10 w-20 h-20 md:w-32 md:h-32 bg-white/10 rounded-full blur-xl" />
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-96 md:h-96 bg-white/5 rounded-full blur-3xl" />
     </Section>
   );
 };

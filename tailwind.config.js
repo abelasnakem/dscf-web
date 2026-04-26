@@ -21,14 +21,14 @@ export default {
         surface: "#FFFFFF",
         text: {
           primary: "#1A1A1A",
-          secondary: "#7A7A7A", 
+          secondary: "#666666", 
           disabled: "#C1C1C1",
           white: "#FFFFFF",
         },
         success: "#2F855A",
-        warning: "#DD6B20",
+        warning: "#C05621",
         error: "#C53030",
-        border: "#D9CFCF",
+        border: "#8C8C8C",
       },
       boxShadow: {
         custom: "0 2px 8px rgba(0, 0, 0, 0.1)",

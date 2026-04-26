@@ -26,23 +26,25 @@ interface TestimonialCardProps {
 
 const StatsDisplay: React.FC<StatsDisplayProps> = ({ stats }) => {
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-10 md:mb-16">
       {stats.map((stat, index) => (
         <AnimatedSection key={index} animation="scale" delay={index * 100}>
           <div className="text-center">
-            <div className="mb-2">
-              {/* Icon placeholder */}
-              <span className="text-2xl">
-                {stat.icon === 'users' && '👥'}
-                {stat.icon === 'shopping-bag' && '🛍️'}
-                {stat.icon === 'star' && '⭐'}
-                {stat.icon === 'thumbs-up' && '👍'}
-              </span>
+            <div className="mb-1 md:mb-2">
+              <i 
+                className={`text-xl md:text-2xl text-primary ${
+                  stat.icon === 'users' ? 'fas fa-users' :
+                  stat.icon === 'shopping-bag' ? 'fas fa-shopping-bag' :
+                  stat.icon === 'star' ? 'fas fa-star' :
+                  stat.icon === 'thumbs-up' ? 'fas fa-thumbs-up' : ''
+                }`}
+                aria-hidden="true"
+              />
             </div>
-            <div className="text-3xl sm:text-4xl font-bold text-primary mb-1">
+            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-1">
               {stat.value}
             </div>
-            <div className="text-textSecondary font-medium">
+            <div className="text-xs sm:text-sm md:text-base text-textSecondary font-medium">
               {stat.label}
             </div>
           </div>
@@ -58,9 +60,10 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial, index })
       <span
         key={i}
         className={cn(
-          'text-lg',
-          i < rating ? 'text-yellow-400' : 'text-gray-300'
+          'text-base md:text-lg',
+          i < rating ? 'text-warning' : 'text-border'
         )}
+        aria-hidden="true"
       >
         ★
       </span>
@@ -69,34 +72,36 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial, index })
 
   return (
     <AnimatedSection animation="slide" delay={index * 150}>
-      <Card className="h-full border-border/50 hover:border-primary/20 transition-colors">
-        <CardContent className="p-6">
+      <Card className="h-full border-border/50 hover:border-primary/20 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2">
+        <CardContent className="p-4 md:p-6">
           {/* Rating */}
-          <div className="flex items-center mb-4">
+          <div className="flex items-center mb-3 md:mb-4" aria-label={`${testimonial.rating} out of 5 stars`}>
             {renderStars(testimonial.rating)}
           </div>
 
           {/* Testimonial Text */}
-          <blockquote className="text-textSecondary leading-relaxed mb-6 italic">
+          <blockquote className="text-sm md:text-base text-textSecondary leading-relaxed mb-4 md:mb-6 italic">
             "{testimonial.text}"
           </blockquote>
 
           {/* Author Info */}
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+          <div className="flex items-center gap-3 md:gap-4">
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden flex-shrink-0">
               <ResponsiveImage
                 src={testimonial.avatar}
                 alt={testimonial.name}
                 className="w-full h-full"
                 aspectRatio="1/1"
+                lazy={true}
+                rootMargin="200px"
               />
             </div>
             
             <div>
-              <div className="font-semibold text-textPrimary">
+              <div className="text-sm md:text-base font-semibold text-textPrimary">
                 {testimonial.name}
               </div>
-              <div className="text-sm text-textSecondary">
+              <div className="text-xs md:text-sm text-textSecondary">
                 {testimonial.role}
                 {testimonial.company && (
                   <>
@@ -123,8 +128,8 @@ export const TrustSection: React.FC<TrustSectionProps> = ({
     <Section className={cn(className)} spacing="lg" background="muted">
       <Container size="xl">
         <AnimatedSection animation="fade">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-textPrimary mb-8">
+          <div className="text-center mb-8 md:mb-12 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-textPrimary mb-6 md:mb-8">
               {title}
             </h2>
           </div>
@@ -140,7 +145,7 @@ export const TrustSection: React.FC<TrustSectionProps> = ({
             tablet: 2,
             desktop: 2,
           }}
-          gap="2rem"
+          gap="1.5rem"
           className="max-w-5xl mx-auto"
         >
           {testimonials.map((testimonial, index) => (

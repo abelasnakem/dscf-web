@@ -1,3 +1,4 @@
+@import '@fortawesome/fontawesome-free/css/all.min.css';
 @import 'tailwindcss';
 
 @theme {
@@ -14,14 +15,14 @@
   --color-surface: #ffffff;
 
   --color-text-primary: #1a1a1a;
-  --color-text-secondary: #7a7a7a;
+  --color-text-secondary: #666666;
   --color-text-disabled: #c1c1c1;
   --color-text-white: #ffffff;
 
   --color-success: #2f855a;
-  --color-warning: #dd6b20;
+  --color-warning: #c05621;
   --color-error: #c53030;
-  --color-border: #d9cfcf;
+  --color-border: #8c8c8c;
 
   /* Custom Spacing */
   --spacing-xs: 0.5rem;
@@ -64,13 +65,13 @@
   --secondary: 10 31 68; /* #0A1F44 - navy */
   --secondary-foreground: 255 255 255; /* #FFFFFF */
   --muted: 217 207 207; /* #D9CFCF */
-  --muted-foreground: 122 122 122; /* #7A7A7A */
+  --muted-foreground: 102 102 102; /* #666666 */
   --accent: 178 34 34; /* #B22222 - primary light */
   --accent-foreground: 255 255 255; /* #FFFFFF */
   --destructive: 197 48 48; /* #C53030 */
   --destructive-foreground: 255 255 255; /* #FFFFFF */
-  --border: 217 207 207; /* #D9CFCF */
-  --input: 217 207 207; /* #D9CFCF */
+  --border: 140 140 140; /* #8C8C8C */
+  --input: 140 140 140; /* #8C8C8C */
   --ring: 128 0 0; /* #800000 - primary */
 }
 
@@ -113,4 +114,73 @@ body {
 
 @layer utilities {
   /* Custom utility classes can be added here */
+  
+  /* Text color utilities with proper contrast */
+  .text-on-primary {
+    color: #FFFFFF; /* White text on maroon background - WCAG AAA compliant */
+  }
+  
+  .text-on-secondary {
+    color: #FFFFFF; /* White text on navy background - WCAG AAA compliant */
+  }
+  
+  .text-on-light {
+    color: #1A1A1A; /* Dark text on light backgrounds - WCAG AAA compliant */
+  }
+  
+  /* Ensure proper contrast for interactive elements */
+  .focus-ring-primary {
+    @apply focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+  }
+  
+  /* Enhanced focus states for accessibility */
+  .focus-ring-white {
+    @apply focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2;
+  }
+}
+
+/* Global focus styles for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+}
+
+/* Remove default focus outline when using custom focus styles */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Ensure all interactive elements have visible focus states */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[role="button"]:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+}
+
+/* Enhanced hover states for links */
+a:not(.no-hover-effect) {
+  transition: color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+a:not(.no-hover-effect):hover {
+  opacity: 0.8;
+}
+
+/* Smooth transitions for interactive elements */
+button,
+a,
+[role="button"] {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Ensure cards with links have proper focus handling */
+.card-link-wrapper:focus-within {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+  border-radius: 0.5rem;
 }
