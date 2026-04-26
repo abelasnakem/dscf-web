@@ -1,0 +1,112 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Custom Colors - Maroon/Navy Palette */
+  --color-primary: #800000;
+  --color-primary-light: #b22222;
+  --color-primary-dark: #4b0000;
+
+  --color-secondary: #0a1f44;
+  --color-secondary-light: #274472;
+  --color-secondary-dark: #000b22;
+
+  --color-background: #f9f8f7;
+  --color-surface: #ffffff;
+
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #7a7a7a;
+  --color-text-disabled: #c1c1c1;
+  --color-text-white: #ffffff;
+
+  --color-success: #2f855a;
+  --color-warning: #dd6b20;
+  --color-error: #c53030;
+  --color-border: #d9cfcf;
+
+  /* Custom Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-xxl: 4rem;
+
+  /* Custom Font Sizes */
+  --font-size-h1: 3.5rem;
+  --font-size-h2: 2.5rem;
+  --font-size-h3: 1.875rem;
+  --font-size-h4: 1.5rem;
+  --font-size-body: 1rem;
+  --font-size-small: 0.875rem;
+
+  /* Custom Shadow */
+  --shadow-custom: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  /* Border Radius */
+  --radius: 0.5rem;
+}
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* shadcn/ui CSS Variables mapped to our theme */
+  --background: 249 248 247; /* #F9F8F7 */
+  --foreground: 26 26 26; /* #1A1A1A */
+  --card: 255 255 255; /* #FFFFFF */
+  --card-foreground: 26 26 26; /* #1A1A1A */
+  --popover: 255 255 255; /* #FFFFFF */
+  --popover-foreground: 26 26 26; /* #1A1A1A */
+  --primary: 128 0 0; /* #800000 - maroon */
+  --primary-foreground: 255 255 255; /* #FFFFFF */
+  --secondary: 10 31 68; /* #0A1F44 - navy */
+  --secondary-foreground: 255 255 255; /* #FFFFFF */
+  --muted: 217 207 207; /* #D9CFCF */
+  --muted-foreground: 122 122 122; /* #7A7A7A */
+  --accent: 178 34 34; /* #B22222 - primary light */
+  --accent-foreground: 255 255 255; /* #FFFFFF */
+  --destructive: 197 48 48; /* #C53030 */
+  --destructive-foreground: 255 255 255; /* #FFFFFF */
+  --border: 217 207 207; /* #D9CFCF */
+  --input: 217 207 207; /* #D9CFCF */
+  --ring: 128 0 0; /* #800000 - primary */
+}
+
+.dark {
+  --background: 0 11 34; /* #000B22 - secondary dark */
+  --foreground: 255 255 255; /* #FFFFFF */
+  --card: 10 31 68; /* #0A1F44 - secondary */
+  --card-foreground: 255 255 255; /* #FFFFFF */
+  --popover: 10 31 68; /* #0A1F44 - secondary */
+  --popover-foreground: 255 255 255; /* #FFFFFF */
+  --primary: 178 34 34; /* #B22222 - primary light */
+  --primary-foreground: 255 255 255; /* #FFFFFF */
+  --secondary: 39 68 114; /* #274472 - secondary light */
+  --secondary-foreground: 255 255 255; /* #FFFFFF */
+  --muted: 39 68 114; /* #274472 */
+  --muted-foreground: 193 193 193; /* #C1C1C1 */
+  --accent: 128 0 0; /* #800000 - primary */
+  --accent-foreground: 255 255 255; /* #FFFFFF */
+  --destructive: 197 48 48; /* #C53030 */
+  --destructive-foreground: 255 255 255; /* #FFFFFF */
+  --border: 39 68 114; /* #274472 */
+  --input: 39 68 114; /* #274472 */
+  --ring: 178 34 34; /* #B22222 */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
