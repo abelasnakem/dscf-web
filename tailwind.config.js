@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        display: ["Space Grotesk", "ui-sans-serif", "system-ui"],
+        body: ["Manrope", "ui-sans-serif", "system-ui"],
+      },
       colors: {
         primary: {
           DEFAULT: "#800000",
@@ -48,6 +52,35 @@ export default {
         h4: "1.5rem",
         body: "1rem",
         small: "0.875rem",
+      },
+      keyframes: {
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        floatSlow: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-16px)" },
+        },
+        pulseSoft: {
+          "0%, 100%": { opacity: "0.7" },
+          "50%": { opacity: "1" },
+        },
+        drift: {
+          "0%, 100%": { transform: "translateX(0px)" },
+          "50%": { transform: "translateX(12px)" },
+        },
+        gradient: {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
+      },
+      animation: {
+        float: "float 6s ease-in-out infinite",
+        "float-slow": "floatSlow 10s ease-in-out infinite",
+        "pulse-soft": "pulseSoft 7s ease-in-out infinite",
+        drift: "drift 14s ease-in-out infinite",
+        gradient: "gradient 14s ease infinite",
       },
     },
   },

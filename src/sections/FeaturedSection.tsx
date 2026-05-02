@@ -78,10 +78,10 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = ({
       <Container size="xl">
         <AnimatedSection animation="fade">
           <div className="text-center mb-8 md:mb-12 lg:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-textPrimary mb-3 md:mb-4">
+            <h2 className="text-balance text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-textPrimary mb-3 md:mb-4 tracking-tight">
               {title}
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-textSecondary max-w-3xl mx-auto px-4">
+            <p className="text-balance text-base sm:text-lg md:text-xl text-textSecondary max-w-3xl mx-auto px-4">
               {subtitle}
             </p>
           </div>

@@ -33,7 +33,7 @@ export const landingPageContent: LandingPageContent = {
         id: "cat-1",
         title: "Furniture & Decor",
         description: "Vintage and modern pieces for every room",
-        image: "/images/categories/furniture.jpg",
+        image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&h=300&fit=crop",
         itemCount: 1247,
         href: "/category/furniture"
       },
@@ -41,7 +41,7 @@ export const landingPageContent: LandingPageContent = {
         id: "cat-2",
         title: "Electronics",
         description: "Gadgets, computers, and accessories",
-        image: "/images/categories/electronics.jpg",
+        image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=300&fit=crop",
         itemCount: 892,
         href: "/category/electronics"
       },
@@ -49,7 +49,7 @@ export const landingPageContent: LandingPageContent = {
         id: "cat-3",
         title: "Fashion & Accessories",
         description: "Clothing, shoes, and jewelry",
-        image: "/images/categories/fashion.jpg",
+        image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=500&h=300&fit=crop",
         itemCount: 2103,
         href: "/category/fashion"
       }

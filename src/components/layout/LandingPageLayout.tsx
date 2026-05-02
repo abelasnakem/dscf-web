@@ -46,7 +46,7 @@ export const LandingPageLayout: React.FC = () => {
   }
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-page">
       {/* Hero Section */}
       <AnimatedSection animation="fade">
         <HeroSection content={content.hero} />

@@ -19,7 +19,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
 
   return (
     <Section
-      className={cn('relative overflow-hidden', className)}
+      className={cn('relative overflow-hidden bg-transparent text-white backdrop-blur-none', className)}
       spacing="xl"
       background="default"
     >
@@ -30,23 +30,25 @@ export const CTASection: React.FC<CTASectionProps> = ({
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${backgroundImage})` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-secondary/90" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-secondary/95 to-secondary-dark/95 bg-[length:200%_200%] motion-safe:animate-gradient" />
         </>
       )}
       
       {/* Fallback gradient background if no image */}
       {!backgroundImage && (
-        <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-secondary-dark bg-[length:200%_200%] motion-safe:animate-gradient" />
       )}
+
+      <div className="absolute inset-0 bg-black/35" />
 
       <Container size="lg" className="relative z-10">
         <AnimatedSection animation="fade">
           <div className="text-center max-w-4xl mx-auto px-4">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight">
+            <h2 className="text-balance text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight drop-shadow-sm">
               {headline}
             </h2>
             
-            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 md:mb-8 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-balance text-base sm:text-lg md:text-xl text-white/90 mb-6 md:mb-8 leading-relaxed max-w-3xl mx-auto drop-shadow-sm">
               {description}
             </p>
 
@@ -76,9 +78,9 @@ export const CTASection: React.FC<CTASectionProps> = ({
       </Container>
 
       {/* Decorative Elements */}
-      <div className="absolute top-1/4 left-4 md:left-10 w-16 h-16 md:w-20 md:h-20 bg-white/10 rounded-full blur-xl" />
-      <div className="absolute bottom-1/4 right-4 md:right-10 w-20 h-20 md:w-32 md:h-32 bg-white/10 rounded-full blur-xl" />
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-96 md:h-96 bg-white/5 rounded-full blur-3xl" />
+      <div className="pointer-events-none absolute top-1/4 left-4 md:left-10 w-16 h-16 md:w-20 md:h-20 bg-white/10 rounded-full blur-xl motion-safe:animate-float" />
+      <div className="pointer-events-none absolute bottom-1/4 right-4 md:right-10 w-20 h-20 md:w-32 md:h-32 bg-white/10 rounded-full blur-xl motion-safe:animate-float-slow" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-96 md:h-96 bg-white/5 rounded-full blur-3xl motion-safe:animate-pulse-soft" />
     </Section>
   );
 };

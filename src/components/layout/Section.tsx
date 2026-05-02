@@ -17,9 +17,9 @@ const spacingClasses = {
 };
 
 const backgroundClasses = {
-  default: 'bg-background',
-  surface: 'bg-surface',
-  muted: 'bg-muted/20',
+  default: 'bg-background/85 backdrop-blur-sm',
+  surface: 'bg-surface/90 backdrop-blur-sm',
+  muted: 'bg-secondary/5 backdrop-blur-sm',
 };
 
 export const Section: React.FC<SectionProps> = ({
@@ -32,6 +32,7 @@ export const Section: React.FC<SectionProps> = ({
   return (
     <Component
       className={cn(
+        'section-ornament',
         spacingClasses[spacing],
         backgroundClasses[background],
         className

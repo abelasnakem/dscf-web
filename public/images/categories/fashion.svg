@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Fashion and accessories">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff2f7" />
+      <stop offset="100%" stop-color="#f7d9e7" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#800000" />
+      <stop offset="100%" stop-color="#b22222" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)" />
+  <rect x="110" y="140" width="1380" height="620" rx="48" fill="white" opacity="0.7" />
+  <path d="M560 320c0-70 55-120 120-120h240c65 0 120 50 120 120v80c0 42-18 82-50 110l-70 60v140c0 44-36 80-80 80h-100c-44 0-80-36-80-80V510l-70-60c-32-28-50-68-50-110v-80z" fill="url(#accent)" opacity="0.18" />
+  <circle cx="310" cy="280" r="100" fill="url(#accent)" opacity="0.14" />
+  <circle cx="1280" cy="320" r="120" fill="url(#accent)" opacity="0.14" />
+  <text x="160" y="200" font-family="Manrope, Arial, sans-serif" font-size="44" fill="#5a1f2d" font-weight="600">Fashion &amp; Accessories</text>
+  <text x="160" y="260" font-family="Manrope, Arial, sans-serif" font-size="28" fill="#7a3c4d">Style finds for every day</text>
+</svg>

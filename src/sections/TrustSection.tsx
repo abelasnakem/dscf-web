@@ -26,30 +26,32 @@ interface TestimonialCardProps {
 
 const StatsDisplay: React.FC<StatsDisplayProps> = ({ stats }) => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-10 md:mb-16">
-      {stats.map((stat, index) => (
-        <AnimatedSection key={index} animation="scale" delay={index * 100}>
-          <div className="text-center">
-            <div className="mb-1 md:mb-2">
-              <i 
-                className={`text-xl md:text-2xl text-primary ${
-                  stat.icon === 'users' ? 'fas fa-users' :
-                  stat.icon === 'shopping-bag' ? 'fas fa-shopping-bag' :
-                  stat.icon === 'star' ? 'fas fa-star' :
-                  stat.icon === 'thumbs-up' ? 'fas fa-thumbs-up' : ''
-                }`}
-                aria-hidden="true"
-              />
+    <div className="mb-10 md:mb-16 rounded-2xl border border-white/70 bg-white/70 p-6 md:p-8 shadow-[0_12px_30px_rgba(15,23,42,0.08)] backdrop-blur-sm">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        {stats.map((stat, index) => (
+          <AnimatedSection key={index} animation="scale" delay={index * 100}>
+            <div className="text-center">
+              <div className="mb-1 md:mb-2">
+                <i 
+                  className={`text-xl md:text-2xl text-primary ${
+                    stat.icon === 'users' ? 'fas fa-users' :
+                    stat.icon === 'shopping-bag' ? 'fas fa-shopping-bag' :
+                    stat.icon === 'star' ? 'fas fa-star' :
+                    stat.icon === 'thumbs-up' ? 'fas fa-thumbs-up' : ''
+                  }`}
+                  aria-hidden="true"
+                />
+              </div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-1">
+                {stat.value}
+              </div>
+              <div className="text-xs sm:text-sm md:text-base text-textSecondary font-medium">
+                {stat.label}
+              </div>
             </div>
-            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-1">
-              {stat.value}
-            </div>
-            <div className="text-xs sm:text-sm md:text-base text-textSecondary font-medium">
-              {stat.label}
-            </div>
-          </div>
-        </AnimatedSection>
-      ))}
+          </AnimatedSection>
+        ))}
+      </div>
     </div>
   );
 };
@@ -129,7 +131,7 @@ export const TrustSection: React.FC<TrustSectionProps> = ({
       <Container size="xl">
         <AnimatedSection animation="fade">
           <div className="text-center mb-8 md:mb-12 px-4">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-textPrimary mb-6 md:mb-8">
+            <h2 className="text-balance text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-textPrimary mb-6 md:mb-8">
               {title}
             </h2>
           </div>

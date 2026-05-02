@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Furniture and decor">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7ede8" />
+      <stop offset="100%" stop-color="#f1d3c6" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#800000" />
+      <stop offset="100%" stop-color="#0a1f44" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)" />
+  <rect x="120" y="140" width="1360" height="620" rx="48" fill="white" opacity="0.7" />
+  <rect x="260" y="520" width="1080" height="160" rx="40" fill="url(#accent)" opacity="0.14" />
+  <rect x="420" y="380" width="760" height="160" rx="36" fill="url(#accent)" opacity="0.22" />
+  <rect x="460" y="420" width="120" height="210" rx="28" fill="#ffffff" opacity="0.9" />
+  <rect x="1020" y="420" width="120" height="210" rx="28" fill="#ffffff" opacity="0.9" />
+  <rect x="640" y="320" width="320" height="80" rx="24" fill="#ffffff" opacity="0.95" />
+  <circle cx="320" cy="260" r="90" fill="url(#accent)" opacity="0.18" />
+  <circle cx="1280" cy="240" r="120" fill="url(#accent)" opacity="0.16" />
+  <text x="160" y="200" font-family="Manrope, Arial, sans-serif" font-size="44" fill="#3b1b1b" font-weight="600">Furniture &amp; Decor</text>
+  <text x="160" y="260" font-family="Manrope, Arial, sans-serif" font-size="28" fill="#6b4a4a">Curated pieces for cozy interiors</text>
+</svg>
