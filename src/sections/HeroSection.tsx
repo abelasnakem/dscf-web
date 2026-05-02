@@ -19,6 +19,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
   return (
     <Section
+      id="hero"
       className={cn('relative overflow-hidden', className)}
       spacing="xl"
       background="default"

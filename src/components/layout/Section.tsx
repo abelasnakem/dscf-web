@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 export interface SectionProps {
   children: React.ReactNode;
   className?: string;
+  id?: string;
   spacing?: 'sm' | 'md' | 'lg' | 'xl';
   background?: 'default' | 'surface' | 'muted';
   as?: React.ElementType;
@@ -25,14 +26,16 @@ const backgroundClasses = {
 export const Section: React.FC<SectionProps> = ({
   children,
   className,
+  id,
   spacing = 'lg',
   background = 'default',
   as: Component = 'section',
 }) => {
   return (
     <Component
+      id={id}
       className={cn(
-        'section-ornament',
+        'section-ornament scroll-mt-24',
         spacingClasses[spacing],
         backgroundClasses[background],
         className

@@ -74,7 +74,7 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = ({
   className,
 }) => {
   return (
-    <Section className={cn(className)} spacing="lg" background="surface">
+    <Section id="categories" className={cn(className)} spacing="lg" background="surface">
       <Container size="xl">
         <AnimatedSection animation="fade">
           <div className="text-center mb-8 md:mb-12 lg:mb-16">

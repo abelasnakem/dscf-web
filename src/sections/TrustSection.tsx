@@ -127,7 +127,7 @@ export const TrustSection: React.FC<TrustSectionProps> = ({
   className,
 }) => {
   return (
-    <Section className={cn(className)} spacing="lg" background="muted">
+    <Section id="trust" className={cn(className)} spacing="lg" background="muted">
       <Container size="xl">
         <AnimatedSection animation="fade">
           <div className="text-center mb-8 md:mb-12 px-4">

@@ -59,7 +59,7 @@ export const BenefitsSection: React.FC<BenefitsSectionProps> = ({
   className,
 }) => {
   return (
-    <Section className={cn(className)} spacing="lg" background="default">
+    <Section id="benefits" className={cn(className)} spacing="lg" background="default">
       <Container size="xl">
         <AnimatedSection animation="fade">
           <div className="text-center mb-10 md:mb-16 px-4">

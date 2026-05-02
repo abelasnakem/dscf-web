@@ -8,6 +8,7 @@ import { BenefitsSection } from '@/sections/BenefitsSection';
 import { CTASection } from '@/sections/CTASection';
 import { FooterSection } from '@/sections/FooterSection';
 import { AnimatedSection } from '@/components/common/AnimatedSection';
+import { HeaderNav } from '@/components/layout/HeaderNav';
 
 export const LandingPageLayout: React.FC = () => {
   const { content, isLoading, error } = useContent();
@@ -46,55 +47,59 @@ export const LandingPageLayout: React.FC = () => {
   }
 
   return (
-    <main className="min-h-screen bg-page">
-      {/* Hero Section */}
-      <AnimatedSection animation="fade">
-        <HeroSection content={content.hero} />
-      </AnimatedSection>
+    <div className="min-h-screen bg-page">
+      <HeaderNav />
 
-      {/* Featured Categories Section */}
-      <AnimatedSection animation="slide" delay={200}>
-        <FeaturedSection
-          title={content.featured.title}
-          subtitle={content.featured.subtitle}
-          categories={content.featured.categories}
-        />
-      </AnimatedSection>
+      <main>
+        {/* Hero Section */}
+        <AnimatedSection animation="fade">
+          <HeroSection content={content.hero} />
+        </AnimatedSection>
 
-      {/* How It Works Section */}
-      <AnimatedSection animation="slide" delay={400}>
-        <HowItWorksSection
-          title={content.howItWorks.title}
-          subtitle={content.howItWorks.subtitle}
-          steps={content.howItWorks.steps}
-        />
-      </AnimatedSection>
+        {/* Featured Categories Section */}
+        <AnimatedSection animation="slide" delay={200}>
+          <FeaturedSection
+            title={content.featured.title}
+            subtitle={content.featured.subtitle}
+            categories={content.featured.categories}
+          />
+        </AnimatedSection>
 
-      {/* Trust Section */}
-      <AnimatedSection animation="slide" delay={600}>
-        <TrustSection
-          title={content.trust.title}
-          stats={content.trust.stats}
-          testimonials={content.trust.testimonials}
-        />
-      </AnimatedSection>
+        {/* How It Works Section */}
+        <AnimatedSection animation="slide" delay={400}>
+          <HowItWorksSection
+            title={content.howItWorks.title}
+            subtitle={content.howItWorks.subtitle}
+            steps={content.howItWorks.steps}
+          />
+        </AnimatedSection>
 
-      {/* Benefits Section */}
-      <AnimatedSection animation="slide" delay={800}>
-        <BenefitsSection
-          title={content.benefits.title}
-          subtitle={content.benefits.subtitle}
-          items={content.benefits.items}
-        />
-      </AnimatedSection>
+        {/* Trust Section */}
+        <AnimatedSection animation="slide" delay={600}>
+          <TrustSection
+            title={content.trust.title}
+            stats={content.trust.stats}
+            testimonials={content.trust.testimonials}
+          />
+        </AnimatedSection>
 
-      {/* CTA Section */}
-      <AnimatedSection animation="fade" delay={1000}>
-        <CTASection content={content.cta} />
-      </AnimatedSection>
+        {/* Benefits Section */}
+        <AnimatedSection animation="slide" delay={800}>
+          <BenefitsSection
+            title={content.benefits.title}
+            subtitle={content.benefits.subtitle}
+            items={content.benefits.items}
+          />
+        </AnimatedSection>
 
-      {/* Footer Section */}
-      <FooterSection content={content.footer} />
-    </main>
+        {/* CTA Section */}
+        <AnimatedSection animation="fade" delay={1000}>
+          <CTASection content={content.cta} />
+        </AnimatedSection>
+
+        {/* Footer Section */}
+        <FooterSection content={content.footer} />
+      </main>
+    </div>
   );
 };

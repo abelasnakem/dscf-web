@@ -76,7 +76,7 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
   className,
 }) => {
   return (
-    <Section className={cn(className)} spacing="lg" background="default">
+    <Section id="how-it-works" className={cn(className)} spacing="lg" background="default">
       <Container size="lg">
         <AnimatedSection animation="fade">
           <div className="text-center mb-10 md:mb-16 px-4">

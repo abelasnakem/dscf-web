@@ -18,7 +18,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
   const { logo, tagline, sections, social, copyright } = content;
 
   return (
-    <footer className={cn('bg-gradient-to-b from-secondary to-secondary-dark text-white', className)}>
+    <footer id="footer" className={cn('bg-gradient-to-b from-secondary to-secondary-dark text-white', className)}>
       <Section spacing="lg" background="default" className="bg-transparent">
         <Container size="xl">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-10 lg:gap-12">
