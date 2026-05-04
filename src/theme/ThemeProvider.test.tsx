@@ -1,6 +1,8 @@
+/* eslint-disable no-console */
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import { ThemeProvider, useTheme } from './ThemeProvider';
+import { ThemeProvider } from './ThemeProvider';
+import { useTheme } from './useTheme';
 
 // Test component that uses the theme
 const TestComponent = () => {

@@ -80,9 +80,8 @@ export const MediaPlayer: React.FC<MediaPlayerProps> = ({
           </video>
         );
 
-      case 'youtube':
+      case 'youtube': {
         if (!media.youtubeId) {
-          console.error('YouTube media requires youtubeId');
           return (
             <div className="w-full h-full bg-muted flex items-center justify-center">
               <p className="text-muted-foreground">Invalid YouTube video</p>
@@ -103,9 +102,9 @@ export const MediaPlayer: React.FC<MediaPlayerProps> = ({
             className="w-full h-full border-0"
           />
         );
+      }
 
       default:
-        console.error(`Unsupported media type: ${media.type}`);
         return (
           <div className="w-full h-full bg-muted flex items-center justify-center">
             <p className="text-muted-foreground">Unsupported media type</p>

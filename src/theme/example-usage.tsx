@@ -1,5 +1,6 @@
 import React from 'react';
-import { ThemeProvider, useTheme } from './ThemeProvider';
+import { ThemeProvider } from './ThemeProvider';
+import { useTheme } from './useTheme';
 
 // Example component that uses the theme
 const ThemedButton: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -53,23 +54,6 @@ const ThemedHeading: React.FC<{ level: 'h1' | 'h2' | 'h3' | 'h4'; children: Reac
   );
 };
 
-// Example usage in an app
-export const ExampleApp: React.FC = () => {
-  return (
-    <ThemeProvider>
-      <div style={{ padding: '2rem' }}>
-        <ThemedHeading level="h1">Welcome to Our Marketplace</ThemedHeading>
-        <ThemedHeading level="h2">Find Amazing Deals</ThemedHeading>
-        
-        <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem' }}>
-          <ThemedButton>Start Selling</ThemedButton>
-          <ThemedButton>Browse Items</ThemedButton>
-        </div>
-      </div>
-    </ThemeProvider>
-  );
-};
-
 // Example of using theme in a styled component
 const ThemedCard: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { colors, spacing } = useTheme();
@@ -86,5 +70,24 @@ const ThemedCard: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     >
       {children}
     </div>
+  );
+};
+
+// Example usage in an app
+export const ExampleApp: React.FC = () => {
+  return (
+    <ThemeProvider>
+      <div style={{ padding: '2rem' }}>
+        <ThemedCard>
+          <ThemedHeading level="h1">Welcome to Our Marketplace</ThemedHeading>
+          <ThemedHeading level="h2">Find Amazing Deals</ThemedHeading>
+          
+          <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem' }}>
+            <ThemedButton>Start Selling</ThemedButton>
+            <ThemedButton>Browse Items</ThemedButton>
+          </div>
+        </ThemedCard>
+      </div>
+    </ThemeProvider>
   );
 };

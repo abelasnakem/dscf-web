@@ -1,25 +1,14 @@
-import React, { createContext, useContext } from 'react';
-import type { ReactNode } from 'react';
-import type { ThemeColors } from './colors';
-import type { TypographyScale } from './typography';
-import type { SpacingScale } from './spacing';
+import type { FC, ReactNode } from 'react';
 import { themeColors } from './colors';
 import { typography } from './typography';
 import { spacing } from './spacing';
-
-interface ThemeContextType {
-  colors: ThemeColors;
-  typography: TypographyScale;
-  spacing: SpacingScale;
-}
-
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+import { ThemeContext, type ThemeContextType } from './themeContext';
 
 interface ThemeProviderProps {
   children: ReactNode;
 }
 
-export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
+export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
   const themeValue: ThemeContextType = {
     colors: themeColors,
     typography,
@@ -31,14 +20,4 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
       {children}
     </ThemeContext.Provider>
   );
-};
-
-export const useTheme = (): ThemeContextType => {
-  const context = useContext(ThemeContext);
-  
-  if (context === undefined) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  
-  return context;
 };

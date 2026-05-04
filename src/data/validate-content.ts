@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { ContentManager } from './contentManager';
 import { landingPageContent } from './content.config';
 

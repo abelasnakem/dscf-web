@@ -79,10 +79,8 @@ export const ExampleHowItWorksComponent: React.FC = () => {
   );
 };
 
-// Example 4: Getting all content at once
+// Example 4: Composing a full page from sections
 export const ExampleFullPageComponent: React.FC = () => {
-  const content = contentManager.getContent();
-  
   return (
     <div>
       <ExampleHeroComponent />
@@ -91,14 +89,4 @@ export const ExampleFullPageComponent: React.FC = () => {
       {/* Add other sections as needed */}
     </div>
   );
-};
-
-// Example 5: Updating content dynamically (for CMS integration)
-export const updateContentExample = () => {
-  contentManager.updateContent({
-    hero: {
-      ...contentManager.getSectionContent('hero'),
-      headline: 'Updated Headline from CMS'
-    }
-  });
 };
